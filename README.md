@@ -8,7 +8,8 @@ The idea is that for every frame of the input video, an mcfunction is created, w
 At a resolution of 96x72 particles the video runs smoothly on my machine, if you are going to increase the resolution too much Minecraft could lag.
 <br/>
 The python code to create all the mcfunctions lasts about 20 minutes in my machine for all 6572 frames of Bad Apple.
-
+<br/>
+If the video contains too many frames, your Minecraft world might just not load at all. The maximum of frames I managed to handle on my computer was about 1500, to create the Bad Apple video I had to record 5 different videos and then put them together.
 
 # How to run this on my computer
 - Download "McVideoLoader.py"
