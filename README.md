@@ -4,7 +4,9 @@ This repository shows how to convert a video into dust particles in Minecraft.
 Showcase (Bad Apple): https://www.youtube.com/watch?v=YDE2voX_v_E
 
 The idea is that for every frame of the input video, an mcfunction is created, which will create the whole canvas of dust colored particles.
+<br/>
 At a resolution of 96x72 particles the video runs smoothly on my machine, if you are going to increase the resolution too much Minecraft could lag.
+<br/>
 The python code to create all the mcfunctions lasts about 20 minutes in my machine for all 6572 frames of Bad Apple.
 
 
@@ -18,6 +20,7 @@ The python code to create all the mcfunctions lasts about 20 minutes in my machi
 
 ## I generated all the frames for my video, how do I run this on my Minecraft world?
 You will have to create a datapack to run all those mcfunctions. If you don't know how to do that, I have provided an example datapack "ikunobu" in this repository, you can just download it and place it inside your ".minecraft/saves/{YourWorldName}/datapacks/" folder.
+<br/>
 You will need to place all your frames inside "ikunobu/data/functions/frames/". An init, reset and update mcfunctions were also created in the same file folder as your input.mp4, you shall place them inside "ikunobu/data/functions/".
 
 With all that done, we are ready to open our Minecraft world! Make sure your world has cheats enabled, because we will need to run some commands.
