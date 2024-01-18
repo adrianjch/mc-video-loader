@@ -16,7 +16,7 @@ def averageColor(frame, x1:int, y1:int, x2:int, y2:int):
     return total / count
 
 def generateCommand(color, x, y):
-    return "particle minecraft:dust {r:.2f} {g:.2f} {b:.2f} 1 ^{x:.2f} ^{y:.2f} ^0 0 0 0 0 1 force @a".format(r=color[0], g=color[1], b=color[2], x=x/density, y=y/density)
+    return "particle minecraft:dust {r:.2f} {g:.2f} {b:.2f} 1 ^{x:.2f} ^{y:.2f} ^0 0 0 0 0 1 force @a".format(b=color[0], g=color[1], r=color[2], x=x/density, y=y/density)
 
 def generateUpdateFile(frameCount):
     command = ""
@@ -58,9 +58,9 @@ while True:
     print("{}/{} ({:.2f}%)".format(frameId, totalFrames, frameId/totalFrames*100))
     command = ""
     y = 0
-    while y < inHeight:
+    while y + 0.01 < inHeight: # Adding 0.1 because of float precision error (719.999 is not greater than 720, but 720.009 is)
         x = 0
-        while x < inWidth:
+        while x + 0.01 < inWidth: # Adding 0.1 because of float precision error (719.999 is not greater than 720, but 720.009 is)
             color = averageColor(frame, int(x), int(y), int(x+scaleX), int(y+scaleY))
             command += generateCommand(color/255, x/scaleX, outHeight-y/scaleY)
             command += "\n"
